@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memories Chronicle — Manga Mode</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+  <!-- Security Overlay -->
+  <div id="security-overlay" class="security-overlay">
+    <div class="login-box" role="dialog" aria-modal="true" aria-labelledby="login-title">
+      <div class="login-top">
+        <div id="login-title" class="badge">ACCESS DENIED</div>
+        <div class="tiny">SISTEMA PROTEGIDO · INTRODUCE LA CLAVE</div>
+      </div>
+
+      <label class="sr-only" for="password-input">Password</label>
+      <input type="password" id="password-input" placeholder="Password..." autocomplete="current-password" inputmode="text" />
+      <button id="login-btn" type="button">DESBLOQUEAR</button>
+
+      <p id="error-msg" class="error-msg" role="status" aria-live="polite">CLAVE INCORRECTA</p>
+      <p class="hint">Tip: en GitHub Pages (HTTPS) funciona perfecto.</p>
+    </div>
+  </div>
+
+  <!-- Opening -->
+  <div id="opening" class="opening hidden" aria-hidden="true">
+    <div class="opening-skip">
+      <button id="skip-opening" class="btn-ghost" type="button">Saltar opening</button>
+    </div>
+    <div class="opening-center">
+      <div class="opening-chapter">CHAPTER 01</div>
+      <div class="opening-title">MEMORIES CHRONICLE</div>
+      <div class="opening-sub">Desliza para leer la historia</div>
+    </div>
+    <div class="opening-bars" aria-hidden="true"></div>
+    <div class="opening-flash" aria-hidden="true"></div>
+  </div>
+
+  <!-- Main -->
+  <div id="main-content" class="hidden">
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="hero-row">
+          <span class="chapter">CHAPTER 01</span>
+
+          <div class="toggles" aria-label="Controles">
+            <button id="toggle-theme" class="chip" type="button" aria-label="Cambiar tema">🌙</button>
+            <button id="toggle-mode" class="chip" type="button" aria-label="Cambiar modo lectura">📖</button>
+          </div>
+        </div>
+
+        <h1>MEMORIES CHRONICLE</h1>
+        <p class="subtitle">Manga virtual · móvil friendly · efectos anime</p>
+
+        <div class="scroll-indicator" aria-hidden="true"></div>
+        <div class="hero-tip" id="hero-tip">Modo: <b>Scroll</b> (pulsa 📖 para páginas)</div>
+      </div>
+
+      <div class="speedlines" aria-hidden="true"></div>
+    </header>
+
+    <main>
+      <!-- Vertical -->
+      <section id="comic-vertical" class="comic-vertical" aria-label="Modo lectura vertical"></section>
+
+      <!-- Horizontal -->
+      <section id="comic-horizontal" class="comic-horizontal hidden" aria-label="Modo páginas horizontales">
+        <div class="hud" role="group" aria-label="Navegación de páginas">
+          <button id="prev-page" class="hud-btn" type="button" aria-label="Página anterior">◀</button>
+          <div class="hud-mid">
+            <span id="page-count">1 / 25</span>
+            <span class="hud-hint">Arrastra · Rueda · Flechas</span>
+          </div>
+          <button id="next-page" class="hud-btn" type="button" aria-label="Página siguiente">▶</button>
+        </div>
+
+        <div id="h-strip" class="h-strip" tabindex="0" aria-label="Tira de páginas"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>TO BE CONTINUED...</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
