@@ -4,9 +4,9 @@
 
 // HASH actual corresponde a "password"
 const PASSWORD_SHA256 =
-  "92f122ac5c2fbef19c1812f2cce2c486f9d3c9e147c992b77054bb4536322c3f";
+  "05b38a2d540f801e9acf9c41f18cf2b32e299b3e8f22dd1017753f57d12b2bc1";
 
-const SESSION_KEY = "ISA";
+const SESSION_KEY = "bizcochito";
 
 // ✅ Tu array EXACTO
 const mangaPages = [
