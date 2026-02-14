@@ -34,7 +34,8 @@ const mangaPages = [
   { file: "22.indi_isa_salon_granada_dia23.png", desc: "Día 23: Salón Granada" },
   { file: "23.indi_coche_navandrinal_dia24.png", desc: "Día 24: Camino a Navandrinal" },
   { file: "24.indi_isa_pueblo_dia25.png", desc: "Día 25: En el Pueblo" },
-  { file: "25.isa_guapa_pueblo_dia26.png", desc: "Día 26: Isa la mas guapa" }
+  { file: "25.isa_guapa_pueblo_dia26.png", desc: "Día 26: Isa la mas guapa" },
+  { file: "26.isa_david_indi_piso.png", desc: "Día 27: Ático en el centro" }
 ];
 
 const securityOverlay = document.getElementById("security-overlay");
