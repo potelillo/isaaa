@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Santuario del Arte Perdido</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Cinzel:wght@500;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="art-quest.css" />
+</head>
+<body>
+  <canvas id="artParticles" aria-hidden="true"></canvas>
+
+  <main class="game-shell">
+    <section id="introScreen" class="screen active intro-screen">
+      <div class="temple-card">
+        <div class="seal">QUEST SECRETA</div>
+        <h1>El Santuario del Arte Perdido</h1>
+        <p class="intro-copy">Una cámara oculta protege los regalos del aniversario. Para abrir el cofre tendrás que encadenar aciertos de arte. El número exacto está oculto: mínimo 5, máximo 12.</p>
+        <button id="startBtn" class="primary-btn">Entrar al santuario</button>
+        <p class="tiny">Si fallas una pregunta, la cadena vuelve a cero y el reto cambia.</p>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen game-screen" aria-live="polite">
+      <header class="game-hud">
+        <div>
+          <span class="mini-label">CADENA ACTUAL</span>
+          <strong id="streakLabel">0</strong>
+        </div>
+        <div>
+          <span class="mini-label">RÉCORD</span>
+          <strong id="bestLabel">0</strong>
+        </div>
+        <div>
+          <span class="mini-label">RETO</span>
+          <strong>???</strong>
+        </div>
+      </header>
+
+      <div class="progress-veil">
+        <div id="mysteryProgress" class="mystery-progress"></div>
+      </div>
+
+      <article class="question-card">
+        <div class="question-top">
+          <span id="categoryLabel" class="category-pill">Categoría</span>
+          <span id="difficultyLabel" class="difficulty-pill">Dificultad</span>
+        </div>
+        <div id="artVisual" class="art-visual"></div>
+        <h2 id="questionText">Pregunta</h2>
+        <div id="answersGrid" class="answers-grid"></div>
+      </article>
+
+      <div id="feedback" class="feedback" aria-live="assertive"></div>
+    </section>
+
+    <section id="winScreen" class="screen win-screen">
+      <div class="treasure-opening">
+        <div class="chest">🎁</div>
+        <h2>El cofre del aniversario se ha abierto</h2>
+        <p>Has superado el reto oculto. Elige una carta-premio.</p>
+      </div>
+      <div id="prizesGrid" class="prizes-grid"></div>
+      <button id="restartBtn" class="ghost-btn">Jugar otra vez</button>
+    </section>
+
+    <section id="finalScreen" class="screen final-screen">
+      <div class="final-card">
+        <div id="finalIcon" class="final-icon">💝</div>
+        <h2 id="finalTitle">Premio desbloqueado</h2>
+        <p id="finalDesc"></p>
+        <div class="final-note">Vale oficial de aniversario. Canjeable por una sonrisa, una escapada y muchos recuerdos juntos.</div>
+        <button id="backPrizesBtn" class="primary-btn">Volver a premios</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="art-quest.js"></script>
+</body>
+</html>
