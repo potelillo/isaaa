@@ -390,3 +390,36 @@ window.genHash = async (plain) => {
   console.log("SHA-256:", h);
   return h;
 };
+
+
+const heroTitle = document.querySelector(".hero h1");
+
+if (heroTitle) {
+
+    let pressTimer;
+
+    heroTitle.addEventListener("pointerdown", () => {
+
+        pressTimer = setTimeout(() => {
+
+            alert("✨ Portal secreto descubierto...");
+
+            window.location.href = "art-quest.html";
+
+        }, 3000); // mantener pulsado 3 segundos
+
+    });
+
+    heroTitle.addEventListener("pointerup", () => {
+        clearTimeout(pressTimer);
+    });
+
+    heroTitle.addEventListener("pointerleave", () => {
+        clearTimeout(pressTimer);
+    });
+
+    heroTitle.addEventListener("pointercancel", () => {
+        clearTimeout(pressTimer);
+    });
+
+}
